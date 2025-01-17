@@ -4,9 +4,13 @@ Gérer vos ventes de gouts LPV en gérant les prix, en calculant le prix de prod
 
 ## Fonctionnalités
 
+![Main.jpg](screens/Main.jpg)
 - Stock
+- ![Calculateur.jpg](screens/Calculateur.jpg)
 - Calculateur
+- ![Stock.jpg](screens/Stock.jpg)
 - Prix
+- ![Prix.jpg](screens/Prix.jpg)
 
 ## Prérequis
 
