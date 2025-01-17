@@ -38,7 +38,7 @@ Avant d'installer ou d'utiliser ce projet, assurez-vous d'avoir les éléments s
 ## Utilisation
 
 1. Installer l'apk dans les releases
-
+- [v0.8](https://github.com/NiavlySDev/LPVPerso/releases/tag/v0.8)
 
 Ou, dans un projet Android :
 
