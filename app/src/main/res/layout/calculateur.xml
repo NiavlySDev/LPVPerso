@@ -12,34 +12,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/baseText"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="80dp" app:layout_constraintEnd_toStartOf="@+id/nombreBaseEntry"
-    />
+            app:layout_constraintTop_toBottomOf="@id/affichagePagePageCalculateur"
+            app:layout_constraintEnd_toStartOf="@+id/nombreBaseEntry"
+            app:layout_constraintBottom_toTopOf="@+id/nicoText"/>
     <TextView
             android:text="Nico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/nicoText"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp" app:layout_constraintEnd_toStartOf="@+id/nombreNicoEntry"
-            android:layout_marginTop="75dp" app:layout_constraintTop_toBottomOf="@+id/baseText"
-    />
+            app:layout_constraintEnd_toStartOf="@+id/nombreNicoEntry"
+            app:layout_constraintTop_toBottomOf="@+id/baseText"
+            app:layout_constraintBottom_toTopOf="@+id/nombreGoutEntry" android:layout_marginStart="60dp"/>
     <TextView
             android:text="Gout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/goutText"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/nombreGoutEntry" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="270dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/nombreGoutEntry"
+            app:layout_constraintTop_toBottomOf="@id/nicoText"
+            app:layout_constraintBottom_toTopOf="@+id/fraisEntry"/>
     <Button
             android:text="Calculer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/calculateButton"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@id/fioleEntry"
             app:layout_constraintTop_toBottomOf="@+id/prixGoutEntry"
-            app:layout_constraintEnd_toStartOf="@+id/fioleEntry"/>
+            app:layout_constraintEnd_toStartOf="@+id/fraisEntry"
+            app:layout_constraintBottom_toTopOf="@+id/outputText"/>
     <EditText
             android:layout_width="94dp"
             android:layout_height="48dp"
@@ -48,8 +47,8 @@
             android:id="@+id/nombreBaseEntry"
             android:hint="Quantité"
             app:layout_constraintStart_toEndOf="@+id/baseText" app:layout_constraintEnd_toStartOf="@+id/prixBaseTexte"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="70dp"
-    />
+            app:layout_constraintTop_toBottomOf="@id/affichagePagePageCalculateur"
+            app:layout_constraintBottom_toTopOf="@+id/nombreNicoEntry"/>
     <EditText
             android:layout_width="94dp"
             android:layout_height="48dp"
@@ -58,8 +57,8 @@
             android:id="@+id/nombreNicoEntry"
             android:hint="Quantité"
             app:layout_constraintStart_toEndOf="@+id/nicoText" app:layout_constraintEnd_toStartOf="@+id/prixNicoText"
-            android:layout_marginEnd="1dp" android:layout_marginTop="46dp"
-            app:layout_constraintTop_toBottomOf="@+id/nombreBaseEntry"/>
+            app:layout_constraintTop_toBottomOf="@+id/nombreBaseEntry"
+            app:layout_constraintBottom_toTopOf="@+id/prixGoutEntry" android:layout_marginStart="62dp"/>
     <EditText
             android:layout_width="94dp"
             android:layout_height="48dp"
@@ -68,8 +67,9 @@
             android:id="@+id/prixGoutEntry"
             android:hint="Prix"
             app:layout_constraintEnd_toStartOf="@+id/parGoutEntry"
-            app:layout_constraintStart_toEndOf="@+id/nombreGoutEntry" android:layout_marginTop="45dp"
-            app:layout_constraintTop_toBottomOf="@+id/nombreNicoEntry"/>
+            app:layout_constraintStart_toEndOf="@+id/nombreGoutEntry"
+            app:layout_constraintTop_toBottomOf="@+id/nombreNicoEntry"
+            app:layout_constraintBottom_toTopOf="@+id/calculateButton"/>
     <EditText
             android:layout_width="94dp"
             android:layout_height="48dp"
@@ -78,8 +78,10 @@
             android:id="@+id/parGoutEntry"
             android:hint="Par"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/prixGoutEntry" android:layout_marginTop="64dp"
-            app:layout_constraintTop_toBottomOf="@+id/prixNicoText"/>
+            app:layout_constraintStart_toEndOf="@+id/prixGoutEntry"
+            app:layout_constraintTop_toBottomOf="@+id/prixNicoText"
+            app:layout_constraintBottom_toTopOf="@+id/fioleEntry"
+            android:layout_marginTop="20dp"/>
     <EditText
             android:layout_width="94dp"
             android:layout_height="48dp"
@@ -88,8 +90,9 @@
             android:id="@+id/nombreGoutEntry"
             android:hint="Quantité"
             app:layout_constraintEnd_toStartOf="@+id/prixGoutEntry"
-            app:layout_constraintStart_toEndOf="@+id/goutText" android:layout_marginTop="45dp"
-            app:layout_constraintTop_toBottomOf="@+id/nombreNicoEntry"/>
+            app:layout_constraintStart_toEndOf="@+id/goutText"
+            app:layout_constraintTop_toBottomOf="@+id/nombreNicoEntry"
+            app:layout_constraintBottom_toTopOf="@+id/calculateButton"/>
     <EditText
             android:layout_width="94dp"
             android:layout_height="48dp"
@@ -97,9 +100,9 @@
             android:ems="10"
             android:id="@+id/fraisEntry"
             android:hint="Frais"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp" app:layout_constraintEnd_toStartOf="@+id/calculateButton"
-            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/nombreGoutEntry"/>
+            app:layout_constraintEnd_toStartOf="@+id/calculateButton"
+            app:layout_constraintTop_toBottomOf="@+id/nombreGoutEntry"
+            app:layout_constraintBottom_toTopOf="@+id/outputText" app:layout_constraintStart_toStartOf="parent"/>
     <EditText
             android:layout_width="94dp"
             android:layout_height="48dp"
@@ -107,58 +110,62 @@
             android:ems="10"
             android:id="@+id/fioleEntry"
             android:hint="Fiole"
-            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/calculateButton" android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/parGoutEntry"/>
+            app:layout_constraintStart_toEndOf="@+id/calculateButton"
+            app:layout_constraintTop_toBottomOf="@+id/parGoutEntry"
+            app:layout_constraintBottom_toTopOf="@+id/outputText"/>
     <TextView
             android:text="9.90€/L"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/prixBaseTexte"
             app:layout_constraintStart_toEndOf="@+id/nombreBaseEntry"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="80dp" android:layout_marginStart="20dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/affichagePagePageCalculateur"
+            app:layout_constraintBottom_toTopOf="@+id/prixNicoText"/>
     <TextView
             android:text="7.50€/100ml"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/prixNicoText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nombreNicoEntry" android:layout_marginEnd="-15dp"
-            android:layout_marginTop="75dp" app:layout_constraintTop_toBottomOf="@+id/prixBaseTexte"/>
+            app:layout_constraintStart_toEndOf="@+id/nombreNicoEntry"
+            app:layout_constraintTop_toBottomOf="@+id/prixBaseTexte"
+            app:layout_constraintBottom_toTopOf="@+id/prixGoutEntry"
+            android:layout_marginStart="55dp"/>
     <TextView
             android:layout_width="389dp"
             android:layout_height="211dp" android:id="@+id/outputText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="26dp"
-            app:layout_constraintTop_toBottomOf="@+id/calculateButton"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculateButton"
+            app:layout_constraintBottom_toTopOf="@+id/copierButton"/>
     <Button
             android:text="Copier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/copierButton"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/outputText"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/resetButton"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/resetButton"
+            app:layout_constraintTop_toBottomOf="@+id/outputText" app:layout_constraintBottom_toBottomOf="parent"
+    />
     <TextView
             android:text="Calculateur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/affichagePagePageCalculateur"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="160dp"
-            android:layout_marginEnd="160dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="20dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
     <Button
             android:text="Retour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/retourButton"
-            app:layout_constraintStart_toEndOf="@+id/resetButton" android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/outputText"/>
+            app:layout_constraintStart_toEndOf="@+id/resetButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outputText" app:layout_constraintBottom_toBottomOf="parent"
+    />
     <Button
             android:text="Reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/resetButton"
-            android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/outputText"
             app:layout_constraintStart_toEndOf="@+id/copierButton"
-            app:layout_constraintEnd_toStartOf="@+id/retourButton"/>
+            app:layout_constraintEnd_toStartOf="@+id/retourButton" app:layout_constraintBottom_toBottomOf="parent"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,8 @@ package fr.niavlys.dev.lpvperso.calculateur;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,11 +35,12 @@ public class CalculateurActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculateur_activity);
+        setContentView(R.layout.calculateur);
         initTextes();
         initButtons();
         initEntrys();
         initButtonsActions();
+        loadSave();
     }
 
     private void initTextes() {
@@ -90,6 +91,7 @@ public class CalculateurActivity extends AppCompatActivity {
                 outputText.setText(outputText.getText()+"\n"+"Frais: "+String.format("%.2f", frais)+"€");
                 outputText.setText(outputText.getText()+"\n"+"Fiole: "+String.format("%.2f", fiole)+"€");
                 outputText.setText(outputText.getText()+"\n"+"Total: "+String.format("%.2f", prixTotal)+"€");
+                save();
             }
         });
 
@@ -109,6 +111,35 @@ public class CalculateurActivity extends AppCompatActivity {
             fraisEntry.setText("");
             fioleEntry.setText("");
         });
+    }
+
+    private void loadSave() {
+        SharedPreferences sharedPreferences = getSharedPreferences("CalculateurPrefs", MODE_PRIVATE);
+
+        nombreBaseEntry.setText(sharedPreferences.getString("nombreBase", ""));
+        nombreNicoEntry.setText(sharedPreferences.getString("nombreNico", ""));
+        prixGoutEntry.setText(sharedPreferences.getString("prixGout", ""));
+        nombreGoutEntry.setText(sharedPreferences.getString("nombreGout", ""));
+        parGoutEntry.setText(sharedPreferences.getString("parGout", ""));
+        fraisEntry.setText(sharedPreferences.getString("frais", ""));
+        fioleEntry.setText(sharedPreferences.getString("fiole", ""));
+        outputText.setText(sharedPreferences.getString("outputText", ""));
+    }
+
+    private void save() {
+        SharedPreferences sharedPreferences = getSharedPreferences("CalculateurPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("nombreBase", nombreBaseEntry.getText().toString());
+        editor.putString("nombreNico", nombreNicoEntry.getText().toString());
+        editor.putString("prixGout", prixGoutEntry.getText().toString());
+        editor.putString("nombreGout", nombreGoutEntry.getText().toString());
+        editor.putString("parGout", parGoutEntry.getText().toString());
+        editor.putString("frais", fraisEntry.getText().toString());
+        editor.putString("fiole", fioleEntry.getText().toString());
+        editor.putString("outputText", outputText.getText().toString());
+
+        editor.apply();
     }
 
     private void copyToClipboard(View view) {
