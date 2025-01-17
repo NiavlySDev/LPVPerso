@@ -1,6 +1,6 @@
 # LPVCommandes
 
-Gérer vos ventes de gouts LPV en gérant les prix, en calculant le prix de production et voptre stock de gouts.
+Gérer vos ventes de gouts LPV en gérant les prix, en calculant le prix de production et votre stock de gouts.
 
 ## Fonctionnalités
 
@@ -58,4 +58,4 @@ Les contributions sont les bienvenues ! Pour contribuer :
 
 ## Auteurs
 
-- **Sylvain Crocquevieille (NiavlySDev)** - _Créateur_ - [Profil GitHub](https://github.com/NiavlySDev)
+- **Sylvain Crocquevieille (NiavlySDev).** _Créateur_ - [Profil GitHub](https://github.com/NiavlySDev)
